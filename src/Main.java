@@ -13,25 +13,27 @@ public class Main {
         System.out.println("Welcome!");
         printMenu();
         String userOption = "-1";
-        userOption=keyboard.next();
-        Generator g = new Generator();
-        switch (userOption){
-            case "1" -> {
-                g.requestPassword();
-            }
-            case "2" -> {
-                g.checkPassword();
-            }
-            case "3" -> {
-                printUsefulInfo();
-            }
-            case "4" ->{
-                printQuitMessage();
-            }
-            default -> {
-                System.out.println();
-                System.out.println("Select one of the available commands");
-                printMenu();
+        while(!userOption.equals("4")) {
+            userOption = keyboard.next();
+            Generator g = new Generator();
+            switch (userOption) {
+                case "1" -> {
+                    g.requestPassword();
+                }
+                case "2" -> {
+                    g.checkPassword();
+                }
+                case "3" -> {
+                    printUsefulInfo();
+                }
+                case "4" -> {
+                    printQuitMessage();
+                }
+                default -> {
+                    System.out.println();
+                    System.out.println("Select one of the available commands");
+                    printMenu();
+                }
             }
         }
     }
